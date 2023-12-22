@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { CiGrid41 } from 'react-icons/ci'
 import Movies from '../components/Movies'
 
-function Home () {
-  const [search, setSearch] = useState('')
-  const [movies, setMovies] = useState([])
-
-  const searchMovie = async (e) => {
+function Home ({ addMovie, search, setSearch, movies, favorites, setMovies }) {
+  const searchMovies = async (e) => {
     e.preventDefault()
     const response = await fetch(`https://www.omdbapi.com/?apikey=6c0a72d6&s=${search}`)
     const json = await response.json()
@@ -23,7 +20,7 @@ function Home () {
           <CiGrid41 className='text-3xl mt-1.5' />
         </section>
         <section className='flex flex-col gap-y-3  sm:flex-row md:items-center justify-between py-5'>
-          <form onSubmit={searchMovie} className='flex gap-2'>
+          <form onSubmit={searchMovies} className='flex gap-2'>
             <input
               type='text'
               className='outline-none border px-4 py-1 rounded-lg focus:border-gray-400'
@@ -40,7 +37,7 @@ function Home () {
 
       </header>
       <main className='py-5'>
-        <Movies movies={movies} />
+        <Movies addMovie={addMovie} movies={movies} favorites={favorites} />
       </main>
     </div>
   )

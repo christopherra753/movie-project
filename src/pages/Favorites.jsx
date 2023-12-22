@@ -1,8 +1,14 @@
 import React from 'react'
+import Movies from '../components/Movies'
 
-function Favorites () {
+function Favorites ({ favorites, addMovie }) {
   return (
-    <div>Favorites</div>
+    <div className='p-5'>
+      <div>
+        <h2 className='text-3xl font-semibold text-gray-600 mb-5'>Favorite Movies:</h2>
+        <Movies movies={favorites} addMovie={addMovie} favorites={favorites} />
+      </div>
+    </div>
   )
 }
 
