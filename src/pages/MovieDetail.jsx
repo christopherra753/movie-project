@@ -43,13 +43,13 @@ function MovieDetail ({ addMovie, favorites }) {
             <span className='absolute hidden group-hover/button:block -bottom-4 left-1/2 -translate-x-1/2 text-xs pointer-events-none font-semibold min-w-max px-1 rounded-md bg-white'>{isLike ? "Don't Like it" : 'I like it'}</span>
           </button>
         </div>
-        <section className='bg-neutral-200 p-4 flex flex-col gap-y-2 md:gap-y-4 max-w-lg w-full'>
+        <section className='bg-neutral-200 dark:bg-neutral-700 p-4 flex flex-col gap-y-2 md:gap-y-4 max-w-lg w-full'>
           <div className='flex md:flex-col items-baseline justify-between'>
-            <h2 className={`text-3xl ${movie.Title?.length > 10 ? 'text-lg md:text-3xl' : ''}  md:text-6xl text-indigo-800 font-bold`}>{movie.Title}</h2>
+            <h2 className={`text-3xl ${movie.Title?.length > 10 ? 'text-lg md:text-3xl' : ''}  md:text-6xl text-indigo-800 dark:text-indigo-400 font-bold`}>{movie.Title}</h2>
             <p className='text-gray-700 text-lg md:text-2xl min-w-max font-semibold'>({movie.Year})</p>
           </div>
           <div className='flex items-baseline gap-x-2 md:flex-col justify-between'>
-            <p className='text-lg md:text-2xl font-medium text-violet-800'>Genre: </p>
+            <p className='text-lg md:text-2xl font-medium dark:text-violet-400 text-violet-800'>Genre: </p>
             <ul className='flex items-center justify-center flex-wrap gap-x-3 gap-y-1'>
               {
               movie.Genre?.split(',').map(genre => <li className='bg-gray-500 px-2 text-xs rounded-lg py-0.5 md:px-6 md:py-1 md:text-base text-white' key={genre}>{genre}</li>)
@@ -57,17 +57,17 @@ function MovieDetail ({ addMovie, favorites }) {
             </ul>
           </div>
           <div className='flex justify-between md:flex-col items-baseline gap-x-2'>
-            <p className='text-lg font-medium md:text-2xl text-violet-800'>Plot:</p>
-            <span className='font-medium text-clip text-xs md:text-lg'>{movie.Plot}</span>
+            <p className='text-lg font-medium md:text-2xl dark:text-violet-400 text-violet-800'>Plot:</p>
+            <span className='font-medium text-clip text-xs dark:text-white md:text-lg'>{movie.Plot}</span>
           </div>
 
           <div className='flex items-baseline gap-x-2 md:flex-col justify-between'>
-            <p className='text-lg font-medium md:text-2xl text-violet-800'>Tipo: </p>
-            <span className='text-base uppercase text-gray-500 md:text-2xl font-semibold'>{movie.Type}</span>
+            <p className='text-lg font-medium md:text-2xl dark:text-violet-400 text-violet-800'>Tipo: </p>
+            <span className='text-base uppercase text-gray-500 dark:text-gray-200 md:text-2xl font-semibold'>{movie.Type}</span>
           </div>
           <div className='flex items-baseline md:flex-col gap-x-2 justify-between'>
-            <p className='text-lg font-medium md:text-2xl text-violet-800'>Writer:</p>
-            <p className='text-base uppercase text-gray-500 font-semibold md:text-2xl'>{movie.Writer}</p>
+            <p className='text-lg font-medium md:text-2xl dark:text-violet-400 text-violet-800'>Writer:</p>
+            <p className='text-base uppercase text-gray-500 dark:text-gray-200 font-semibold md:text-2xl'>{movie.Writer}</p>
           </div>
 
         </section>

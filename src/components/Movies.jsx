@@ -3,6 +3,7 @@ import MovieItem from './MovieItem'
 
 const Movies = memo(({ movies, addMovie, favorites }) => {
   const hasMovies = movies.length > 0
+
   return (
     hasMovies
       ? (
@@ -19,7 +20,7 @@ const Movies = memo(({ movies, addMovie, favorites }) => {
         )
       : (
         <div className='flex justify-center relative before:absolute before:h-[2px] before:w-full before:left-0 before:bg-gray-200 before:top-1/2 before:-translate-y-1/2'>
-          <p className='text-3xl text-gray-600 relative px-4 bg-white'>¡No Movies!</p>
+          <p className='text-3xl text-gray-600 relative px-4 bg-white dark:bg-neutral-800 dark:text-white'>¡No Movies!</p>
         </div>
         )
   )
